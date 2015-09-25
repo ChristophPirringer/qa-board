@@ -7,6 +7,11 @@ export default Ember.Route.extend({
   actions: {
     deleteQuestion: function(question) {
       if (confirm('Are you sure you want to delete this question?')) {
+        question.get('answers').then(function(answers) {
+          answers.forEach(function(answer) {
+            answer.destroyRecord();
+          });
+        });
         question.destroyRecord();
         this.transitionTo('index');
       }
