@@ -7,6 +7,11 @@
   display: inline;
 }
 
+.question,
 .question-body {
   margin: 0 auto;
+}
+
+.main-content div {
+  margin: 1% auto;
 }

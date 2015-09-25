@@ -1,0 +1,17 @@
+{{#if isFormShowing}}
+<form role="form">
+
+  <div class="form-group">
+    <label for="user">User</label>
+    {{input value=user id="user" class="form-control col-md-4"}}
+  </div>
+  <div class="form-group">
+    <label for="body">Answer</label>
+    {{textarea value=body id="body" class="form-control col-md-6"}}
+  </div>
+  <br>
+  <button {{action "saveComment"}} class="btn">Post Answer</button>
+</form>
+{{else}}
+<button {{action 'showForm'}}>Answer the Question</button>
+{{/if}}
