@@ -1,0 +1,25 @@
+{{#if isFormShowing}}
+<form role="form">
+  <div class="form-group">
+    <label for="title">Title for your question</label>
+    {{input value=title id="title" class="form-control col-md-4"}}
+  </div>
+  <div class="form-group">
+    <label for="user">User</label>
+    {{input value=user id="user" class="form-control col-md-4"}}
+  </div>
+  <div class="form-group">
+    <label for="body">Enter your question</label>
+    {{textarea value=body id="body" class="form-control col-md-6"}}
+  </div>
+  <div class="form-group">
+    <label for="notes">Add any additional notes</label>
+    {{input value=notes id="notes" class="form-control col-md-4"}}
+  </div>
+  <br>
+  <button {{action "saveQuestion"}} class="btn">Ask Question</button>
+
+</form>
+{{else}}
+<button {{action 'showForm'}}>Add Question</button>
+{{/if}}
