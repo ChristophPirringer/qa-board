@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'qa-board',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    firebase: 'https://qa-codereview.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
