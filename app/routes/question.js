@@ -5,6 +5,12 @@ export default Ember.Route.extend({
     return this.store.findRecord('question', params.question_id);
   },
   actions: {
+    deleteQuestion: function(question) {
+      if (confirm('Are you sure you want to delete this question?')) {
+        question.destroyRecord();
+        this.transitionTo('index');
+      }
+    },
     editQuestion: function(question, params) {
       Object.keys(params).forEach(function(key) {
         if(params[key] !== undefined) {
