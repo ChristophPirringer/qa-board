@@ -6,14 +6,14 @@ export default Ember.Component.extend({
     showForm: function() {
       this.set('isFormShowing', true);
     },
-    saveComment: function() {
+    saveAnswer: function() {
       var params = {
         question: this.get('question'),
         body: this.get('body'),
         user: this.get('user')
       };
       this.set('isFormShowing', false);
-      this.sendAction('saveComment', params);
+      this.sendAction('saveAnswer', params);
     }
   }
 });
